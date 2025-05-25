@@ -4,7 +4,6 @@ import com.api.verba.dto.product.ProductRequest;
 import com.api.verba.dto.product.ProductResponse;
 import com.api.verba.model.Product;
 import com.api.verba.repository.ProductRepository;
-import com.api.verba.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +27,7 @@ public class ProductService {
         newProduct.setDescription(request.getDescription());
         newProduct.setAmount(request.getAmount());
         newProduct.setValue(request.getValue());
+        newProduct.setProductType(request.getProductType());
 
         productRepository.save(newProduct);
 
@@ -37,6 +37,7 @@ public class ProductService {
         response.setDescription(newProduct.getDescription());
         response.setAmount(newProduct.getAmount());
         response.setValue(newProduct.getValue());
+        response.setProductType(newProduct.getProductType());
 
         return response;
     }
