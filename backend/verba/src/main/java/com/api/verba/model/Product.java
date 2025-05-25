@@ -1,5 +1,6 @@
 package com.api.verba.model;
 
+import com.api.verba.enumm.ProductType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,4 +28,7 @@ public class Product {
     private BigDecimal amount;
 
     private BigDecimal value;
+
+    @Enumerated(EnumType.STRING)
+    private ProductType productType;
 }
